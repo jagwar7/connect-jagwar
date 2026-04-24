@@ -1,0 +1,28 @@
+{
+  "placeholderImages": [
+    {
+      "id": "profile",
+      "description": "Profile picture of Nasim Akhter",
+      "imageUrl": "https://picsum.photos/seed/profile/400/400",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "1",
+      "description": "Screenshot of an e-commerce platform",
+      "imageUrl": "https://picsum.photos/seed/proj1/600/400",
+      "imageHint": "website shopping"
+    },
+    {
+      "id": "2",
+      "description": "Screenshot of a task management app",
+      "imageUrl": "https://picsum.photos/seed/proj2/600/400",
+      "imageHint": "website tasks"
+    },
+    {
+      "id": "3",
+      "description": "Screenshot of a portfolio website with AI features",
+      "imageUrl": "https://picsum.photos/seed/proj3/600/400",
+      "imageHint": "website abstract"
+    }
+  ]
+}
