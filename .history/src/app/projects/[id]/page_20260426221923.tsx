@@ -14,15 +14,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
-  const {id} = await params;
-  const project = projects.find(p => p.id === id);
+export default function ProjectPage({ params }: { params: { id: string } }) {
+  const project = projects.find(p => p.id === params.id);
 
   if (!project) {
     notFound();
   }
 
-  const projectImage = project.image;
+  const projectImage = project.image);
 
   const getLiveLinkButton = () => {
     if (!project.deploymentUrl || project.deploymentUrl === '#') {
@@ -70,12 +69,12 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
             {projectImage && (
               <div className="aspect-video overflow-hidden rounded-md border mb-6">
                 <Image
-                  src={projectImage}
+                  src={projectImage.imageUrl}
                   alt={project.title}
                   width={800}
                   height={450}
                   className="h-full w-full object-cover"
-                  data-ai-hint={projectImage}
+                  data-ai-hint={projectImage.imageHint}
                 />
               </div>
             )}

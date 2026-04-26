@@ -14,9 +14,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
-  const {id} = await params;
-  const project = projects.find(p => p.id === id);
+export default function ProjectPage({ params }: { params: { id: string } }) {
+  const project = projects.find(p => p.id === params.id);
 
   if (!project) {
     notFound();
@@ -75,7 +74,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                   width={800}
                   height={450}
                   className="h-full w-full object-cover"
-                  data-ai-hint={projectImage}
+                  data-ai-hint={projectImage.imageHint}
                 />
               </div>
             )}

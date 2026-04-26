@@ -2,7 +2,7 @@
 import { Briefcase, Github, GraduationCap, Linkedin, Mail, Rss, User } from "lucide-react";
 import FLASH_AUTH_IMG1 from '../assets/images/FLASH_AUTH_IMG1.png';
 import FLASH_AUTH_IMG2 from '../assets/images/FLASH_AUTH_IMG2.png';
-import FLASH_AUTH_IMG3 from '../assets/images/FLASH_AUTH_IMG3.png';
+import FLASH_AUTH_IMG3 from '../assets/images/FLASH_AUTH_IMG1.png';
 
 
 export const personalData = {
