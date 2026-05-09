@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { navLinks } from '@/lib/data';
 import { Code, Menu, X } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react' ;
 import {
   Sheet,
   SheetContent,
