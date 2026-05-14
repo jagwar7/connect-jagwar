@@ -11,14 +11,14 @@ import {
   SheetTrigger,
   SheetClose
 } from "@/components/ui/sheet"
-import { useAuth } from '@/context/AuthContext';
+import { useAuth, User } from '@/context/AuthContext';
 import FlashAuthClient from 'flashauthbyjagwar';
 import {jwtDecode} from "jwt-decode"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const {setUser} = useAuth();
+  const {setUser, user} = useAuth();
   const [client, setClient] = useState<any>(null);
 
   
@@ -43,7 +43,18 @@ export function Header() {
     try {
       let userData = await client.SignInWithGoogle();
       userData = jwtDecode(userData);
-      console.log(userData);
+
+      //------------------------------
+      // CREATE USER INFORMATION AFTER DECODING
+      const userInfo : User = {
+        name: userData.name,
+        email: userData.email,
+        role: userData.role,
+        authType: userData.authProvider,
+        imageURL: userData.avatar
+      };
+      setUser(userInfo);
+      console.log("User state: ", user);
     } catch (error) {
       console.log(error)
     }
