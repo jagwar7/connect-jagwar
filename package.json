@@ -1,6 +1,6 @@
 {
   "name": "nextn",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 3000",
@@ -41,7 +41,7 @@
     "dotenv": "^16.5.0",
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.9.1",
-    "flashauthbyjagwar": "^3.9.0",
+    "flashauthbyjagwar": "^4.2.0",
     "genkit": "^1.28.0",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.475.0",
