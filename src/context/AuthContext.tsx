@@ -24,6 +24,7 @@ export function AuthProvider({children}:{children: ReactNode}){
     const [user, setUserState] = useState<User | null>(null);
 
     const setUser =(userData : User)=>{
+        console.log("Setting user data in context : ", userData);
         setUserState(userData);
     }
 
