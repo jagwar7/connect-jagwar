@@ -53,7 +53,7 @@ export function Header() {
         authType: userData.authProvider,
         imageURL: userData.avatar
       };
-      setUser(userInfo);
+      setUser(userInfo as User);
       console.log("User Data: ", userData);
       console.log("User info: ", userInfo);
       console.log("User state: ", user);
