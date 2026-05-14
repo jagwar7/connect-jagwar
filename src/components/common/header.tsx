@@ -54,6 +54,8 @@ export function Header() {
         imageURL: userData.avatar
       };
       setUser(userInfo);
+      console.log("User Data: ", userData);
+      console.log("User info: ", userInfo);
       console.log("User state: ", user);
     } catch (error) {
       console.log(error)
