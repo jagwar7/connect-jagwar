@@ -23,11 +23,17 @@ export function AuthProvider({children}:{children: ReactNode}){
 
     const [user, setUserState] = useState<User | null>(null);
 
-    const setUser =(userData : User)=>{
+    const setUser =(userData : any)=>{
         console.log("Setting user data in context : ", userData);
-        setUserState(prev=>({
-            ...prev,...userData
-        }));
+        setUserState({
+            name: userData.name,
+            email: userData.email,
+            role: userData.role,
+            authType: userData.authProvider,
+            imageURL: userData.avatar
+        });
+
+        console.log("User state after setting : ", user);
     }
 
     const logOut=()=>{

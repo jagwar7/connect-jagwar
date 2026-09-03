@@ -21,10 +21,11 @@ export function Header() {
   const {setUser, user} = useAuth();
   const [client, setClient] = useState<any>(null);
 
-  
+  const flashauthPublicKey = process.env.NEXT_PUBLIC_FLASHAUTH_PUBLIC_KEY;
 
   useEffect(() => {
-    const flashauthClient = new FlashAuthClient("FAwoNltHJUmVTG-0ZAEZ");
+    console.log("FlashAuth Public Key: ", flashauthPublicKey);
+    const flashauthClient = new FlashAuthClient(flashauthPublicKey as string);
     if(!flashauthClient){
       window.alert("Failed to initialize FlashAuth");
       return;
@@ -44,19 +45,8 @@ export function Header() {
       let userData = await client.SignInWithGoogle();
       userData = jwtDecode(userData);
 
-      //------------------------------
-      // CREATE USER INFORMATION AFTER DECODING
-      const userInfo : User = {
-        name: userData.name,
-        email: userData.email,
-        role: userData.role,
-        authType: userData.authProvider,
-        imageURL: userData.avatar
-      };
-      setUser(userInfo as User);
-      console.log("User Data: ", userData);
-      console.log("User info: ", userInfo);
-      console.log("User state: ", user);
+      setUser(userData);
+      console.log("User state in header : ", user);
     } catch (error) {
       console.log(error)
     }
